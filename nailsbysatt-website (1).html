@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nails by Satt | Nail studio, press-on nails & academy | Almere</title>
+<meta name="description" content="Nails by Satt in Almere. Creatieve nail art, BIAB, gellak, handgemaakte press-on nails op maat en de Satt Academy met cursussen en masterclasses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#FFFFFF;
+  --blush:#FAF4F1;
+  --blush-2:#F4E9E4;
+  --ink:#221E1B;
+  --soft:#766B64;
+  --rose:#B76E79;
+  --rose-deep:#9A5560;
+  --gold:#C9A06A;
+  --line:rgba(34,30,27,.1);
+  --radius:20px;
+  --shadow:0 24px 60px rgba(34,30,27,.1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--white);color:var(--ink);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.1}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+.wrap{max-width:1220px;margin:0 auto;padding:0 28px}
+section{padding:96px 0}
+.kicker{display:inline-flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--rose);margin-bottom:20px;font-weight:500}
+.kicker::before{content:"";width:34px;height:1px;background:var(--rose)}
+h2{font-size:clamp(34px,4.2vw,56px);letter-spacing:-.01em;margin-bottom:16px}
+h2 em,h1 em{font-style:italic;color:var(--rose)}
+.sub{color:var(--soft);max-width:620px;font-weight:300;margin-bottom:54px;font-size:18px}
+.center{text-align:center}
+.center .sub{margin-left:auto;margin-right:auto}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;padding:16px 32px;border-radius:999px;font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;transition:.25s;border:none;cursor:pointer}
+.btn:hover{background:var(--rose-deep);transform:translateY(-2px);box-shadow:0 16px 34px rgba(183,110,121,.3)}
+.btn.rose{background:var(--rose)}
+.btn.rose:hover{background:var(--rose-deep)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff;box-shadow:none}
+.btn.sm{padding:12px 24px}
+.link{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--rose-deep);font-weight:500}
+.link svg{transition:transform .25s}
+.link:hover svg{transform:translateX(6px)}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* topbar */
+.topbar{background:var(--ink);color:#fff;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;overflow:hidden;padding:10px 0}
+.topbar .track{display:flex;gap:70px;white-space:nowrap;animation:marq 30s linear infinite;width:max-content}
+.topbar span{display:flex;gap:70px}
+.topbar i{font-style:normal;color:var(--gold)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* nav */
+nav{position:sticky;top:0;z-index:90;background:rgba(255,255,255,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:80px;gap:20px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;letter-spacing:.01em;flex:none}
+.logo em{font-style:italic;color:var(--rose);font-weight:500}
+.nav-links{display:flex;gap:30px;font-size:13.5px;letter-spacing:.1em;text-transform:uppercase}
+.nav-links a{position:relative;padding:4px 0;color:var(--soft);transition:color .25s;cursor:pointer;white-space:nowrap}
+.nav-links a.active,.nav-links a:hover{color:var(--ink)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--rose);transition:width .3s}
+.nav-links a.active::after,.nav-links a:hover::after{width:100%}
+.burger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;transition:.3s}
+.mobile-menu{display:none;flex-direction:column;gap:4px;padding:14px 28px 24px;border-top:1px solid var(--line);background:#fff}
+.mobile-menu a{padding:12px 0;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);border-bottom:1px solid var(--line);cursor:pointer}
+.mobile-menu.open{display:flex}
+
+/* pages */
+.page{display:none}
+.page.active{display:block;animation:fadein .5s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(14px)}to{opacity:1}}
+
+/* page hero (subpages) */
+.page-hero{background:var(--blush);padding:80px 0 70px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.page-hero::after{content:"✦";position:absolute;right:8%;top:30%;font-size:28px;color:var(--rose);opacity:.35}
+.page-hero h1{font-size:clamp(40px,5.5vw,72px)}
+.page-hero p{color:var(--soft);font-weight:300;max-width:600px;margin-top:14px;font-size:18px}
+.crumb{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);margin-bottom:18px;font-weight:500}
+
+/* HOME hero */
+.hero{position:relative;padding:90px 0 80px;background:
+  radial-gradient(900px 500px at 85% 0%,rgba(183,110,121,.09),transparent 60%),
+  radial-gradient(700px 500px at 0% 100%,rgba(201,160,106,.1),transparent 60%),#fff}
+.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(48px,6.4vw,94px);letter-spacing:-.015em}
+.hero p.lead{margin:26px 0 38px;max-width:520px;font-size:19px;color:var(--soft);font-weight:300}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-meta{display:flex;gap:46px;margin-top:56px;flex-wrap:wrap}
+.hero-meta b{display:block;font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600}
+.hero-meta span{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+.hero-visual{position:relative}
+.hero-visual .main{border-radius:220px 220px var(--radius) var(--radius);overflow:hidden;aspect-ratio:3/4;box-shadow:var(--shadow)}
+.hero-visual .main img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.hero-visual:hover .main img{transform:scale(1.05)}
+.hero-visual .float{position:absolute;left:-64px;bottom:36px;width:190px;aspect-ratio:1;border-radius:var(--radius);overflow:hidden;border:6px solid #fff;box-shadow:var(--shadow);animation:bob 5s ease-in-out infinite}
+.hero-visual .float img{width:100%;height:100%;object-fit:cover}
+@keyframes bob{50%{transform:translateY(-12px)}}
+.badge-rot{position:absolute;top:-30px;right:-26px;width:124px;height:124px;animation:spin 18s linear infinite;z-index:2}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* usp */
+.usp{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.usp .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding-top:30px;padding-bottom:30px}
+.usp div{display:flex;align-items:center;gap:13px;font-size:14px}
+.usp svg{flex:none}
+
+/* dienst cards */
+.diensten{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.dienst{position:relative;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;transition:transform .3s,box-shadow .3s;cursor:pointer}
+.dienst:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+.dienst .img{aspect-ratio:4/3.4;overflow:hidden}
+.dienst .img img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.dienst:hover .img img{transform:scale(1.07)}
+.dienst .body{padding:26px 26px 30px}
+.dienst h3{font-size:25px;margin-bottom:8px}
+.dienst p{font-size:14.5px;color:var(--soft);font-weight:300;margin-bottom:18px}
+.dienst .tagnew{position:absolute;top:16px;left:16px;background:var(--rose);color:#fff;font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:6px 14px;border-radius:999px;font-weight:500}
+
+/* price rows */
+.prices{max-width:840px;margin:0 auto}
+.price-row{display:grid;grid-template-columns:1fr auto;gap:6px 24px;padding:28px 8px;border-bottom:1px solid var(--line);transition:padding-left .25s,background .25s;align-items:baseline}
+.price-row:hover{padding-left:20px;background:var(--blush)}
+.price-row .name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:500;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.price-row .desc{grid-column:1;color:var(--soft);font-weight:300;font-size:15px;max-width:560px}
+.price-row .amt{grid-row:1/span 2;align-self:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:28px;color:var(--rose-deep)}
+.tag{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;background:var(--rose);color:#fff;padding:5px 12px;border-radius:999px;font-weight:500;font-family:'Jost',sans-serif}
+.tag.gold{background:var(--gold)}
+.note{margin-top:30px;padding:20px 24px;background:var(--blush);border-left:2px solid var(--rose);border-radius:0 12px 12px 0;font-size:15px;color:var(--soft);font-weight:300}
+.note b{color:var(--ink);font-weight:500}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:235px;gap:16px}
+.gal a{position:relative;border-radius:var(--radius);overflow:hidden}
+.gal a img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.gal a:hover img{transform:scale(1.08)}
+.gal a::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(34,30,27,.3),transparent 55%);opacity:0;transition:opacity .4s}
+.gal a:hover::after{opacity:1}
+.gal a:nth-child(1){grid-row:span 2}
+.gal a:nth-child(4){grid-row:span 2}
+.gal a:nth-child(6){grid-column:span 2}
+.gal.full a:nth-child(8){grid-row:span 2}
+.gal.full a:nth-child(11){grid-column:span 2}
+
+/* reviews */
+.rev-band{background:var(--blush);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
+.rev-track{display:flex;gap:22px;width:max-content;animation:marq 50s linear infinite;padding:8px 0}
+.rev-band:hover .rev-track{animation-play-state:paused}
+.rev{width:350px;flex:none;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+.rev .stars{color:var(--gold);letter-spacing:4px;margin-bottom:12px;font-size:15px}
+.rev p{font-weight:300;color:var(--soft);font-size:15.5px;margin-bottom:16px}
+.rev b{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:18px}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rev-grid .rev{width:auto}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.about-img{border-radius:var(--radius) var(--radius) 220px 220px;overflow:hidden;aspect-ratio:3/4;box-shadow:var(--shadow)}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(28px,3.2vw,44px);line-height:1.25;margin-bottom:24px}
+.quote span{color:var(--rose)}
+.about p{color:var(--soft);font-weight:300;margin-bottom:16px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
+.stepc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px 30px;position:relative;transition:transform .3s,box-shadow .3s}
+.stepc:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.stepc::before{counter-increment:s;content:"0" counter(s);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:46px;color:var(--blush-2);position:absolute;top:18px;right:26px;font-weight:600;color:rgba(183,110,121,.25)}
+.stepc h3{font-size:23px;margin-bottom:10px}
+.stepc p{color:var(--soft);font-weight:300;font-size:15px}
+
+/* press-on types */
+.types{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.type{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 20px;text-align:center;transition:.3s}
+.type:hover{border-color:var(--rose);transform:translateY(-5px);box-shadow:var(--shadow)}
+.type .ic{font-size:26px;margin-bottom:12px}
+.type h3{font-size:20px;margin-bottom:6px}
+.type p{font-size:13.5px;color:var(--soft);font-weight:300}
+
+/* academy */
+.acad-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.course{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:38px 34px;position:relative;transition:.3s;overflow:hidden}
+.course::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--rose),var(--gold))}
+.course:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.course .lvl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px;display:block}
+.course h3{font-size:26px;margin-bottom:8px}
+.course .pr{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;color:var(--rose-deep);margin-bottom:14px}
+.course p{color:var(--soft);font-weight:300;font-size:15px;margin-bottom:18px}
+.course ul{list-style:none;margin-bottom:22px}
+.course li{display:flex;gap:10px;font-size:14.5px;font-weight:300;color:var(--soft);padding:4px 0}
+.course li::before{content:"✦";color:var(--rose);font-size:11px;margin-top:4px}
+
+/* cadeaubon */
+.bon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:880px;margin:0 auto}
+.bon{background:linear-gradient(150deg,#fff,var(--blush));border:1px solid var(--line);border-radius:var(--radius);padding:42px 30px;text-align:center;transition:.3s;position:relative;overflow:hidden}
+.bon::after{content:"✦";position:absolute;top:14px;right:18px;color:var(--rose);opacity:.3}
+.bon:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--rose)}
+.bon .amt{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:600;color:var(--rose-deep)}
+.bon p{color:var(--soft);font-weight:300;font-size:14.5px;margin:10px 0 22px}
+
+/* huisregels */
+.rules{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.rule{display:flex;gap:20px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 26px;align-items:flex-start}
+.rule .ic{flex:none;width:40px;height:40px;border-radius:50%;background:var(--blush);display:flex;align-items:center;justify-content:center;font-size:17px}
+.rule h3{font-size:20px;margin-bottom:4px}
+.rule p{color:var(--soft);font-weight:300;font-size:15px}
+
+/* form */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);margin-bottom:8px;font-weight:500}
+.field input,.field textarea,.field select{width:100%;padding:15px 18px;border:1px solid var(--line);border-radius:12px;font-family:'Jost',sans-serif;font-size:16px;background:#fff;color:var(--ink);transition:border-color .25s}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--rose)}
+.contact-card{background:var(--blush);border-radius:var(--radius);padding:40px 36px}
+.contact-card h3{font-size:26px;margin-bottom:20px}
+.contact-card .row{display:flex;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);font-weight:300}
+.contact-card .row:last-child{border:none}
+.contact-card .row b{font-weight:500;min-width:90px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+
+/* CTA band */
+.cta{background:var(--ink);color:#fff;border-radius:40px;margin:0 24px;text-align:center;position:relative;overflow:hidden}
+.cta::before,.cta::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;border:1px solid rgba(255,255,255,.12)}
+.cta::before{top:-210px;left:-150px}
+.cta::after{bottom:-220px;right:-140px}
+.cta h2{font-size:clamp(34px,4.6vw,60px);max-width:740px;margin:0 auto 18px}
+.cta h2 em{color:var(--gold)}
+.cta p{max-width:500px;margin:0 auto 38px;color:rgba(255,255,255,.7);font-weight:300}
+.cta .btn{background:#fff;color:var(--ink)}
+.cta .btn:hover{background:var(--blush);box-shadow:0 14px 30px rgba(0,0,0,.3)}
+
+/* footer */
+footer{padding:72px 0 36px;border-top:1px solid var(--line);background:var(--blush)}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px}
+footer h4{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin-bottom:18px;font-weight:500}
+footer ul{list-style:none}
+footer li{margin-bottom:9px}
+footer li a{color:var(--soft);font-weight:300;transition:color .2s;cursor:pointer}
+footer li a:hover{color:var(--rose-deep)}
+.foot-logo{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;margin-bottom:12px}
+.foot-logo em{font-style:italic;color:var(--rose)}
+.foot-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:26px;border-top:1px solid var(--line);font-size:13px;color:var(--soft);font-weight:300;flex-wrap:wrap}
+
+/* whatsapp */
+.wa{position:fixed;right:24px;bottom:24px;z-index:99;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px rgba(0,0,0,.22);transition:transform .25s}
+.wa:hover{transform:scale(1.1)}
+
+@media(max-width:1020px){
+  .diensten{grid-template-columns:1fr 1fr}
+  .types{grid-template-columns:repeat(3,1fr)}
+  .steps,.rev-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:860px){
+  .hero-grid,.about-grid,.form-grid{grid-template-columns:1fr;gap:48px}
+  .hero-visual .float{left:auto;right:-8px;width:140px}
+  .usp .wrap{grid-template-columns:1fr 1fr}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  .gal a:nth-child(6),.gal.full a:nth-child(11){grid-column:span 1}
+  .nav-links{display:none}
+  .burger{display:block}
+  .acad-grid,.steps,.rev-grid{grid-template-columns:1fr}
+  .types{grid-template-columns:1fr 1fr}
+  .bon-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .cta{margin:0;border-radius:28px}
+  .price-row .amt{grid-row:auto;grid-column:1}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="track">
+    <span><i>✦</i> Gratis verzending bij press-on bestellingen vanaf € 80 <i>✦</i> De 20e van de maand komen nieuwe plekken online <i>✦</i> Studio in Almere <i>✦</i> Nieuw: Satt Academy cursussen</span>
+    <span><i>✦</i> Gratis verzending bij press-on bestellingen vanaf € 80 <i>✦</i> De 20e van de maand komen nieuwe plekken online <i>✦</i> Studio in Almere <i>✦</i> Nieuw: Satt Academy cursussen</span>
+  </div>
+</div>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="logo" data-page="home">Nails <em>by Satt</em></a>
+    <div class="nav-links">
+      <a data-page="behandelingen">Behandelingen</a>
+      <a data-page="presson">Press-on nails</a>
+      <a data-page="academy">Academy</a>
+      <a data-page="portfolio">Portfolio</a>
+      <a data-page="reviews">Reviews</a>
+      <a data-page="cadeaubonnen">Cadeaubonnen</a>
+      <a data-page="over">Over Satt</a>
+    </div>
+    <a class="btn rose sm" href="https://nailsbysatt.salonized.com/widget_bookings/new" target="_blank" rel="noopener">Boek nu</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a data-page="home">Home</a>
+    <a data-page="behandelingen">Behandelingen</a>
+    <a data-page="presson">Press-on nails</a>
+    <a data-page="academy">Academy</a>
+    <a data-page="portfolio">Portfolio</a>
+    <a data-page="reviews">Reviews</a>
+    <a data-page="cadeaubonnen">Cadeaubonnen</a>
+    <a data-page="huisregels">Huisregels</a>
+    <a data-page="over">Over Satt</a>
+    <a data-page="contact">Contact</a>
+  </div>
+</nav>
+
+<!-- ================= HOME ================= -->
+<div class="page active" id="page-home">
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">Nail studio · Press-ons · Academy · Almere</div>
+      <h1>Special care<br>and <em>art</em> for nails</h1>
+      <p class="lead">Van een verzorgde BIAB manicure tot volledig custom nail art, handgemaakte press-on nails op jouw maat en cursussen via de Satt Academy. Jouw stijl en mijn werk maken het verschil.</p>
+      <div class="hero-cta">
+        <a class="btn rose" href="https://nailsbysatt.salonized.com/widget_bookings/new" target="_blank" rel="noopener">Boek een afspraak</a>
+        <a class="btn ghost" data-page="presson">Bestel press-on nails</a>
+      </div>
+      <div class="hero-meta">
+        <div><b>500+</b><span>Tevreden klanten</span></div>
+        <div><b>100%</b><span>Op maat gemaakt</span></div>
+        <div><b>5.0 ★</b><span>Klantbeoordeling</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg class="badge-rot" viewBox="0 0 128 128">
+        <defs><path id="circ" d="M64,64 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+        <circle cx="64" cy="64" r="62" fill="#B76E79"/>
+        <text fill="#fff" font-size="12.5" letter-spacing="3" font-family="Jost,sans-serif"><textPath href="#circ">SPECIAL CARE · NAIL ART · BY SATT ·</textPath></text>
+        <text x="64" y="74" text-anchor="middle" fill="#fff" font-size="30" font-family="Cormorant Garamond,serif" font-style="italic">S</text>
+      </svg>
+      <div class="main"><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image2.jpeg" alt="Nail art door Nails by Satt"></div>
+      <div class="float"><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image-5.jpg" alt="Press-on nails"></div>
+    </div>
+  </div>
+</header>
+
+<div class="usp">
+  <div class="wrap">
+    <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B76E79" stroke-width="1.6"><path d="M12 21s-7-4.6-9.3-9A5.4 5.4 0 0 1 12 6a5.4 5.4 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg> Zorgvuldig & hygiënisch</div>
+    <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B76E79" stroke-width="1.6"><path d="M12 2l2.4 6.9L21 11l-6.6 2.1L12 20l-2.4-6.9L3 11l6.6-2.1z"/></svg> Custom designs & nail art</div>
+    <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B76E79" stroke-width="1.6"><rect x="3" y="7" width="13" height="11" rx="2"/><path d="M16 10h3l2 3v5h-5"/><circle cx="7.5" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg> Gratis verzending vanaf € 80</div>
+    <div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B76E79" stroke-width="1.6"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> Leer het zelf via de Academy</div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Wat ik voor je doe</div>
+      <h2>Vier manieren om van nagels <em>kunst</em> te maken</h2>
+      <p class="sub">In de studio, thuis met press-ons, als cadeau of door het zelf te leren. Kies wat bij jou past.</p>
+    </div>
+    <div class="diensten">
+      <div class="dienst reveal" data-page="behandelingen">
+        <div class="img"><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image2.jpeg" alt="Behandelingen" loading="lazy"></div>
+        <div class="body"><h3>Behandelingen</h3><p>Acryl, gellak, BIAB en volledige nail art in de studio in Almere.</p><span class="link">Bekijk & boek <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </div>
+      <div class="dienst reveal" data-page="presson">
+        <div class="img"><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image-5.jpg" alt="Press-on nails" loading="lazy"></div>
+        <div class="body"><h3>Press-on nails</h3><p>Handgemaakte plaknagels op jouw maat, herbruikbaar en thuisbezorgd.</p><span class="link">Bestel jouw set <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </div>
+      <div class="dienst reveal" data-page="academy">
+        <span class="tagnew">Nieuw</span>
+        <div class="img"><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image3.jpeg" alt="Satt Academy" loading="lazy"></div>
+        <div class="body"><h3>Satt Academy</h3><p>Cursussen en masterclasses. Leer zelf de technieken van Satt.</p><span class="link">Bekijk cursussen <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </div>
+      <div class="dienst reveal" data-page="cadeaubonnen">
+        <div class="img"><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image-1-1.jpg" alt="Cadeaubonnen" loading="lazy"></div>
+        <div class="body"><h3>Cadeaubonnen</h3><p>Geef een verzorgmoment of custom set cadeau. Altijd raak.</p><span class="link">Geef cadeau <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal center">
+      <div class="kicker" style="justify-content:center">Prijzen</div>
+      <h2>Meest populaire <em>behandelingen</em></h2>
+      <p class="sub">Transparante vanaf prijzen. De 20e van de maand komen nieuwe plekken online.</p>
+    </div>
+    <div class="prices reveal">
+      <div class="price-row"><span class="name">Gellak</span><span class="desc">Meerdere kleuren mogelijk, per kleur € 3 extra.</span><span class="amt">vanaf € 20</span></div>
+      <div class="price-row"><span class="name">BIAB <span class="tag">Populair</span></span><span class="desc">Geloverlay over de natuurlijke nagel. Flexibel systeem dat meegaat met de vorm van je nagel.</span><span class="amt">vanaf € 50</span></div>
+      <div class="price-row"><span class="name">French manicure</span><span class="desc">Gebruik van 2 kleuren acryl.</span><span class="amt">vanaf € 55</span></div>
+      <div class="price-row"><span class="name">Babyboom</span><span class="desc">Twee acrylkleuren die in elkaar overlopen. Meerdere kleuren mogelijk, per kleur € 3 extra.</span><span class="amt">vanaf € 55</span></div>
+      <div class="price-row"><span class="name">Freestyle set by Satt <span class="tag gold">Signature</span></span><span class="desc">Nieuwe set acrylnagels met nail art en veel bling. Het visitekaartje van de studio.</span><span class="amt">vanaf € 120</span></div>
+    </div>
+    <div class="center" style="margin-top:40px">
+      <a class="btn" data-page="behandelingen">Alle behandelingen & info</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Portfolio</div>
+      <h2>Creativiteit en zorgvuldigheid is <em>de norm</em></h2>
+    </div>
+    <div class="gal reveal">
+      <a><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image2.jpeg" alt="Nail art" loading="lazy"></a>
+      <a><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image-4.jpg" alt="Nail design" loading="lazy"></a>
+      <a><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image6.jpeg" alt="Custom set" loading="lazy"></a>
+      <a><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image-2-scaled.jpg" alt="Press-on" loading="lazy"></a>
+      <a><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image3.jpeg" alt="Freestyle" loading="lazy"></a>
+      <a><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image8.jpeg" alt="Detail" loading="lazy"></a>
+      <a><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image-1-1.jpg" alt="Press-on set" loading="lazy"></a>
+    </div>
+    <div class="center" style="margin-top:38px"><a class="btn ghost" data-page="portfolio">Bekijk het volledige portfolio</a></div>
+  </div>
+</section>
+
+<div class="rev-band">
+  <div class="wrap" style="padding-top:70px;padding-bottom:24px">
+    <div class="kicker">Reviews</div>
+    <h2 style="margin-bottom:30px">Dit zeggen klanten over <em>Nails by Satt</em></h2>
+  </div>
+  <div class="rev-track">
+    <div class="rev"><div class="stars">★★★★★</div><p>Omg mijn manager vond mijn nagels echt mooi. Hij zei ik mag er altijd mee werken dus ik kom nu elke maand langs!</p><b>@xoanadeborah</b></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>Ik vind je nagels zo mooi en het blijft altijd echt goed zitten! Ik krijg ook echt altijd complimenten.</p><b>@kirrinnn_</b></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>Ik heb de press-on nails binnen! Super nice en ik ga ze zeker bewaren.</p><b>@semmmiee</b></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>Echt mooi, ik kom mijn press-ons altijd bij je bestellen!</p><b>@F.Absame</b></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>Dankjewel voor de acryl service! Heel mooi gedaan.</p><b>@MILLIE Precious</b></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>Ik krijg alleen maar complimenten over mijn nagels.</p><b>@AKNMCARTER</b></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>Omg mijn manager vond mijn nagels echt mooi. Hij zei ik mag er altijd mee werken dus ik kom nu elke maand langs!</p><b>@xoanadeborah</b></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>Ik vind je nagels zo mooi en het blijft altijd echt goed zitten! Ik krijg ook echt altijd complimenten.</p><b>@kirrinnn_</b></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>Ik heb de press-on nails binnen! Super nice en ik ga ze zeker bewaren.</p><b>@semmmiee</b></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>Echt mooi, ik kom mijn press-ons altijd bij je bestellen!</p><b>@F.Absame</b></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>Dankjewel voor de acryl service! Heel mooi gedaan.</p><b>@MILLIE Precious</b></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>Ik krijg alleen maar complimenten over mijn nagels.</p><b>@AKNMCARTER</b></div>
+  </div>
+  <div style="height:60px"></div>
+</div>
+
+<section>
+  <div class="wrap about-grid">
+    <div class="about-img reveal"><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image7.jpg" alt="Het werk van Satt" loading="lazy"></div>
+    <div class="about reveal">
+      <div class="kicker">Over Satt</div>
+      <div class="quote">"Jouw stijl en mijn werk maken <span>het verschil</span>"</div>
+      <p>Nails by Satt maakt van jouw ideeën een stukje kunstwerk op de nagels. De nagels worden gedragen als een sieraad of bijgehouden voor de verzorging van de handen.</p>
+      <p>Satt heeft oog voor creatieve designs en neemt de tijd om jou tevreden te stellen. Bij geen mogelijkheid wordt er een mogelijkheid gemaakt.</p>
+      <a class="link" data-page="over" style="margin-top:8px;cursor:pointer">Lees het verhaal van Satt <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2 class="reveal">Klaar voor nagels waar je <em>complimenten</em> over krijgt?</h2>
+    <p class="reveal">Boek je behandeling, bestel jouw custom press-ons of schrijf je in voor een cursus.</p>
+    <a class="btn reveal" href="https://nailsbysatt.salonized.com/widget_bookings/new" target="_blank" rel="noopener">Boek een afspraak</a>
+  </div>
+</section>
+</div>
+
+<!-- ================= BEHANDELINGEN ================= -->
+<div class="page" id="page-behandelingen">
+<div class="page-hero">
+  <div class="wrap">
+    <div class="crumb">Home / Behandelingen</div>
+    <h1>Behandelingen <em>in de studio</em></h1>
+    <p>Acrylnagels, gellak en BIAB. De prijzen verschillen per lengte vanwege productgebruik en tijd. Combinaties van behandelingen zijn mogelijk en worden weergegeven bij het boeken.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="prices reveal">
+      <div class="price-row"><span class="name">Gellak</span><span class="desc">Meerdere kleuren mogelijk, per kleur € 3 extra.</span><span class="amt">vanaf € 20</span></div>
+      <div class="price-row"><span class="name">BIAB <span class="tag">Populair</span></span><span class="desc">Geloverlay over de natuurlijke nagel. Ideaal voor het aanhouden van de groei dankzij het flexibele gelsysteem dat meegaat met de vorm van je natuurlijke nagel.</span><span class="amt">vanaf € 50</span></div>
+      <div class="price-row"><span class="name">French manicure</span><span class="desc">Gebruik van 2 kleuren acryl, strak en tijdloos.</span><span class="amt">vanaf € 55</span></div>
+      <div class="price-row"><span class="name">Babyboom</span><span class="desc">Twee acrylkleuren die in elkaar overlopen. Meerdere kleuren mogelijk, per kleur € 3 extra.</span><span class="amt">vanaf € 55</span></div>
+      <div class="price-row"><span class="name">Freestyle set by Satt <span class="tag gold">Signature</span></span><span class="desc">Een nieuwe set acrylnagels met nail art en veel bling. Volledig vrij design door Satt.</span><span class="amt">vanaf € 120</span></div>
+    </div>
+    <div class="note reveal"><b>Nail art:</b> versiering van de nagels met handgemaakte designs in gel, glitter en sieraden. De prijs inclusief nail art wordt ter plekke bepaald en is niet online te berekenen. Alle prijzen zijn vanaf prijzen.</div>
+    <div class="note reveal" style="margin-top:14px"><b>Boeken:</b> de 20e van de maand worden de nieuwe plekken online beschikbaar gesteld. Wees er snel bij, de agenda is meestal binnen enkele dagen vol.</div>
+    <div class="center" style="margin-top:44px">
+      <a class="btn rose" href="https://nailsbysatt.salonized.com/widget_bookings/new" target="_blank" rel="noopener">Reserveren en alles bekijken</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Hoe het werkt</div>
+      <h2>Zo verloopt jouw <em>afspraak</em></h2>
+    </div>
+    <div class="steps">
+      <div class="stepc reveal"><h3>Boek online</h3><p>Kies je behandeling en tijdslot via het online boekingssysteem. Combinaties en inhoud van de behandeling staan duidelijk toegelicht.</p></div>
+      <div class="stepc reveal"><h3>Deel jouw idee</h3><p>Neem inspiratiefoto's mee of bespreek je wensen ter plekke. Satt denkt mee en vertaalt jouw stijl naar een uniek design.</p></div>
+      <div class="stepc reveal"><h3>Geniet van je set</h3><p>Je verlaat de studio met een verzorgde, unieke set waar je weken plezier van hebt. Onderhoud en advies krijg je erbij.</p></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ================= PRESS-ON ================= -->
+<div class="page" id="page-presson">
+<div class="page-hero">
+  <div class="wrap">
+    <div class="crumb">Home / Press-on nails</div>
+    <h1>Press-on nails <em>op maat</em></h1>
+    <p>Handgemaakte plaknagels op basis van jouw maten en jouw idee. Ideaal als je geen kunstnagels wil of kan dragen. Herbruikbaar, thuisbezorgd en met gratis verzending vanaf € 80.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Kies jouw stijl</div>
+      <h2>Vijf <em>signature</em> stijlen</h2>
+      <p class="sub">Elke set wordt met gellak of acryl bewerkt om aan jouw wensen te voldoen. Verschillende vormen beschikbaar.</p>
+    </div>
+    <div class="types">
+      <div class="type reveal"><div class="ic">🎀</div><h3>Eén kleur</h3><p>Strakke gellak in elke gewenste kleur.</p></div>
+      <div class="type reveal"><div class="ic">🤍</div><h3>French</h3><p>Tijdloze french manicure look.</p></div>
+      <div class="type reveal"><div class="ic">🌸</div><h3>Babyboom</h3><p>Zachte overloop van 2 kleuren.</p></div>
+      <div class="type reveal"><div class="ic">✨</div><h3>Chrome</h3><p>Metallic effect met spiegelglans.</p></div>
+      <div class="type reveal"><div class="ic">💎</div><h3>Art</h3><p>Diamanten, Swarovski, handgemaakte art, stickers, piercings en glitter.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Zo werkt het</div>
+      <h2>Van maat tot <em>brievenbus</em></h2>
+    </div>
+    <div class="steps">
+      <div class="stepc reveal"><h3>Meet je nagels</h3><p>Meet de breedte van elke nagel in millimeters volgens de meetinstructie. Zijn je maten al bekend bij ons? Dan sla je deze stap over.</p></div>
+      <div class="stepc reveal"><h3>Kies design & bestel</h3><p>Kies jouw stijl, upload een foto van het gewenste design en benoem je specifieke wensen in het bestelformulier.</p></div>
+      <div class="stepc reveal"><h3>Ontvang & draag</h3><p>Je set wordt met de hand gemaakt en thuisbezorgd, inclusief alles wat je nodig hebt en duidelijke instructies. Herbruikbaar bij goed onderhoud.</p></div>
+    </div>
+    <div class="note reveal" style="margin-top:30px"><b>Inhoud van je pakket:</b> jouw custom set, lijm en plaktabs, een mini vijl, een bokkenpootje en een stap voor stap instructiekaart.</div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap form-grid">
+    <div class="reveal">
+      <div class="kicker">Bestellen</div>
+      <h2>Bestel jouw <em>custom set</em></h2>
+      <div class="field"><label>Welke press-on nails wil je?</label>
+        <select><option>Eén kleur gellak</option><option>French manicure</option><option>Babyboom (overloop van 2 kleuren)</option><option>Chrome (metallic effect)</option><option>Art (diamanten, Swarovski, art, stickers, decals, piercings, glitter)</option></select>
+      </div>
+      <div class="field"><label>Specifieke wensen</label><textarea rows="3" placeholder="Beschrijf jouw idee of wensen"></textarea></div>
+      <div class="field"><label>Zijn je maten al bij ons bekend?</label>
+        <select><option>Nee, ik geef mijn maten door</option><option>Ja, mijn maten zijn bekend</option></select>
+      </div>
+      <div class="field"><label>Naam</label><input type="text" placeholder="Jouw naam"></div>
+      <div class="field"><label>E-mail</label><input type="email" placeholder="jouw@email.nl"></div>
+      <button class="btn rose" type="button">Verstuur bestelling</button>
+    </div>
+    <div class="contact-card reveal">
+      <h3>Goed om te weten</h3>
+      <div class="row"><b>Verzending</b><span>Gratis vanaf € 80, anders € 4,95</span></div>
+      <div class="row"><b>Levertijd</b><span>Handgemaakt, 7 tot 10 werkdagen</span></div>
+      <div class="row"><b>Meten</b><span>Meetinstructie wordt meegestuurd na je bestelling</span></div>
+      <div class="row"><b>Foto</b><span>Stuur je designfoto en nagelfoto via WhatsApp na het bestellen</span></div>
+      <div class="row"><b>Vragen</b><span>App naar +31 6 488 57 072</span></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ================= ACADEMY ================= -->
+<div class="page" id="page-academy">
+<div class="page-hero">
+  <div class="wrap">
+    <div class="crumb">Home / Satt Academy</div>
+    <h1>Satt <em>Academy</em></h1>
+    <p>Leer de technieken van Satt in kleine groepen of 1-op-1. Van je allereerste gellak tot gevorderde nail art en het bouwen van je eigen press-on business.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Cursussen & masterclasses</div>
+      <h2>Kies jouw <em>cursus</em></h2>
+      <p class="sub">Alle cursussen zijn hands-on, inclusief materialen tijdens de les en een certificaat van deelname.</p>
+    </div>
+    <div class="acad-grid">
+      <div class="course reveal">
+        <span class="lvl">Beginner · 1 dagdeel</span>
+        <h3>Gellak & BIAB Basics</h3>
+        <div class="pr">€ 149 per persoon</div>
+        <p>De perfecte start. Leer de natuurlijke nagel voorbereiden, strak lakken en werken met BIAB voor sterke, verzorgde nagels.</p>
+        <ul>
+          <li>Nagelvoorbereiding & verzorging</li>
+          <li>Strak aanbrengen van gellak</li>
+          <li>BIAB techniek stap voor stap</li>
+          <li>Inclusief oefenmaterialen tijdens de les</li>
+        </ul>
+        <a class="btn sm" href="https://wa.me/31648857072" target="_blank" rel="noopener">Schrijf je in</a>
+      </div>
+      <div class="course reveal">
+        <span class="lvl">Beginner / gevorderd · 1 dag</span>
+        <h3>Press-on Masterclass</h3>
+        <div class="pr">€ 199 per persoon</div>
+        <p>Leer professionele press-on nails maken zoals Satt ze maakt: van maatvoering tot afwerking en verpakking.</p>
+        <ul>
+          <li>Maten opnemen & vormen kiezen</li>
+          <li>Werken met gellak en acryl op tips</li>
+          <li>Duurzame afwerking & hergebruik</li>
+          <li>Tips voor je eigen press-on business</li>
+        </ul>
+        <a class="btn sm" href="https://wa.me/31648857072" target="_blank" rel="noopener">Schrijf je in</a>
+      </div>
+      <div class="course reveal">
+        <span class="lvl">Gevorderd · 1 dag</span>
+        <h3>Nail Art Masterclass</h3>
+        <div class="pr">€ 229 per persoon</div>
+        <p>Voor wie de basis beheerst en wil uitblinken in art. Strakke lijnen, 3D elementen, chrome, steentjes en de signature Satt bling.</p>
+        <ul>
+          <li>Strakke lijnen & handgetekende art</li>
+          <li>Werken met diamanten & Swarovski</li>
+          <li>Chrome en speciale effecten</li>
+          <li>Eigen freestyle set maken</li>
+        </ul>
+        <a class="btn sm" href="https://wa.me/31648857072" target="_blank" rel="noopener">Schrijf je in</a>
+      </div>
+      <div class="course reveal">
+        <span class="lvl">Alle niveaus · op maat</span>
+        <h3>1-op-1 Coaching</h3>
+        <div class="pr">€ 95 per uur</div>
+        <p>Privéles volledig afgestemd op jouw leerdoelen. Ideaal om snel te groeien of specifieke technieken te perfectioneren.</p>
+        <ul>
+          <li>Volledig persoonlijk programma</li>
+          <li>Flexibel in te plannen</li>
+          <li>Directe feedback op jouw werk</li>
+          <li>Ook geschikt voor startende stylistes</li>
+        </ul>
+        <a class="btn sm" href="https://wa.me/31648857072" target="_blank" rel="noopener">Vraag beschikbaarheid</a>
+      </div>
+    </div>
+    <div class="note reveal" style="margin-top:30px"><b>Kleine groepen:</b> maximaal 4 deelnemers per cursus zodat er volop persoonlijke aandacht is. Data worden maandelijks aangekondigd via Instagram.</div>
+  </div>
+</section>
+</div>
+
+<!-- ================= PORTFOLIO ================= -->
+<div class="page" id="page-portfolio">
+<div class="page-hero">
+  <div class="wrap">
+    <div class="crumb">Home / Portfolio</div>
+    <h1>Het <em>portfolio</em></h1>
+    <p>Een selectie van sets uit de studio en press-on bestellingen. Elke set is uniek en met de hand gemaakt.</p>
+  </div>
+</div>
+<section>
+  <div class="wrap">
+    <div class="gal full reveal">
+      <a><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image2.jpeg" alt="Nail art" loading="lazy"></a>
+      <a><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image-4.jpg" alt="Design" loading="lazy"></a>
+      <a><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image6.jpeg" alt="Custom" loading="lazy"></a>
+      <a><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image-2-scaled.jpg" alt="Press-on" loading="lazy"></a>
+      <a><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image3.jpeg" alt="Freestyle" loading="lazy"></a>
+      <a><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image8.jpeg" alt="Detail" loading="lazy"></a>
+      <a><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image7.jpg" alt="Set" loading="lazy"></a>
+      <a><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image-5.jpg" alt="Press-on set" loading="lazy"></a>
+      <a><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image-3.jpg" alt="Press-on art" loading="lazy"></a>
+      <a><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image-1-1.jpg" alt="Set" loading="lazy"></a>
+      <a><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image-1.jpg" alt="Set" loading="lazy"></a>
+      <a><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image-7-scaled.jpg" alt="Set" loading="lazy"></a>
+      <a><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image-9-scaled.jpg" alt="Set" loading="lazy"></a>
+    </div>
+    <div class="center" style="margin-top:40px">
+      <a class="btn ghost" href="https://www.instagram.com/nailsbysatt/" target="_blank" rel="noopener">Meer op Instagram</a>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ================= REVIEWS ================= -->
+<div class="page" id="page-reviews">
+<div class="page-hero">
+  <div class="wrap">
+    <div class="crumb">Home / Reviews</div>
+    <h1>Wat klanten <em>zeggen</em></h1>
+    <p>Eerlijke reacties van klanten uit de studio en press-on bestellingen.</p>
+  </div>
+</div>
+<section>
+  <div class="wrap">
+    <div class="rev-grid">
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>Omg mijn manager vond mijn nagels echt mooi. Hij zei ik mag er altijd mee werken dus ik kom nu elke maand langs!</p><b>@xoanadeborah</b></div>
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>Ik vind je nagels zo mooi en het blijft altijd echt goed zitten! Ik krijg ook echt altijd complimenten.</p><b>@kirrinnn_</b></div>
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>Ik heb de press-on nails binnen! Super nice en ik ga ze zeker bewaren.</p><b>@semmmiee</b></div>
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>Echt mooi, ik kom mijn press-ons altijd bij je bestellen!</p><b>@F.Absame</b></div>
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>Dankjewel voor de acryl service! Heel mooi gedaan.</p><b>@MILLIE Precious</b></div>
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>Ik krijg alleen maar complimenten over mijn nagels.</p><b>@AKNMCARTER</b></div>
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>Zo creatief! Precies wat ik in gedachten had en nog mooier.</p><b>@beneditaaa</b></div>
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>Het is echt heel mooi wat Nails by Satt doet!</p><b>@nafthalyramona</b></div>
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>Ik kan nu echt mooie foto's maken!</p><b>@Sharon Sandhu</b></div>
+    </div>
+    <div class="center" style="margin-top:44px">
+      <a class="btn rose" href="https://nailsbysatt.salonized.com/widget_bookings/new" target="_blank" rel="noopener">Ervaar het zelf, boek nu</a>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ================= CADEAUBONNEN ================= -->
+<div class="page" id="page-cadeaubonnen">
+<div class="page-hero">
+  <div class="wrap">
+    <div class="crumb">Home / Cadeaubonnen</div>
+    <h1>Geef nagels <em>cadeau</em></h1>
+    <p>Een cadeaubon van Nails by Satt is altijd raak. Te besteden aan elke behandeling, press-on set of cursus van de Satt Academy.</p>
+  </div>
+</div>
+<section>
+  <div class="wrap">
+    <div class="bon-grid">
+      <div class="bon reveal"><div class="amt">€ 25</div><p>Leuk als attentie. Bijvoorbeeld voor een gellak behandeling.</p><a class="btn sm" href="https://wa.me/31648857072" target="_blank" rel="noopener">Bestel deze bon</a></div>
+      <div class="bon reveal"><div class="amt">€ 55</div><p>Goed voor een french manicure, babyboom of BIAB behandeling.</p><a class="btn sm rose" href="https://wa.me/31648857072" target="_blank" rel="noopener">Bestel deze bon</a></div>
+      <div class="bon reveal"><div class="amt">€ 120</div><p>De ultieme verwennerij: een volledige Freestyle set by Satt.</p><a class="btn sm" href="https://wa.me/31648857072" target="_blank" rel="noopener">Bestel deze bon</a></div>
+    </div>
+    <div class="note reveal" style="max-width:880px;margin:34px auto 0"><b>Eigen bedrag:</b> liever een ander bedrag of een bon voor een cursus? Stuur een berichtje via WhatsApp en je ontvangt de bon digitaal of mooi verpakt per post.</div>
+  </div>
+</section>
+</div>
+
+<!-- ================= HUISREGELS ================= -->
+<div class="page" id="page-huisregels">
+<div class="page-hero">
+  <div class="wrap">
+    <div class="crumb">Home / No nonsense</div>
+    <h1>No <em>nonsense</em></h1>
+    <p>Duidelijke afspraken zorgen voor de beste ervaring voor iedereen. Dit zijn de huisregels van de studio.</p>
+  </div>
+</div>
+<section>
+  <div class="wrap">
+    <div class="rules">
+      <div class="rule reveal"><div class="ic">⏰</div><div><h3>Kom op tijd</h3><p>Kom maximaal 5 minuten voor je afspraak. Ben je meer dan 15 minuten te laat, dan kan de afspraak helaas niet doorgaan.</p></div></div>
+      <div class="rule reveal"><div class="ic">📅</div><div><h3>Verzetten & annuleren</h3><p>Verzetten of annuleren kan kosteloos tot 48 uur van tevoren. Daarna wordt 50% van de behandelprijs in rekening gebracht.</p></div></div>
+      <div class="rule reveal"><div class="ic">🧼</div><div><h3>Kom met schone nagels</h3><p>Verwijder oude gellak of nagels van een andere salon vooraf, of boek de verwijderbehandeling erbij.</p></div></div>
+      <div class="rule reveal"><div class="ic">👤</div><div><h3>Kom alleen</h3><p>De studio is een rustige werkruimte. Kom zonder begeleiding zodat er volledige focus is op jouw set.</p></div></div>
+      <div class="rule reveal"><div class="ic">💳</div><div><h3>Betaling</h3><p>Betalen kan per pin of via een betaalverzoek direct na de behandeling. Press-on bestellingen worden vooraf betaald.</p></div></div>
+      <div class="rule reveal"><div class="ic">🤝</div><div><h3>Garantie</h3><p>Laat binnen 5 dagen weten als er iets niet goed zit, dan wordt het kosteloos hersteld. Daarna gelden reparatietarieven.</p></div></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ================= OVER SATT ================= -->
+<div class="page" id="page-over">
+<div class="page-hero">
+  <div class="wrap">
+    <div class="crumb">Home / Over Satt</div>
+    <h1>Over <em>Satt</em></h1>
+  </div>
+</div>
+<section>
+  <div class="wrap about-grid">
+    <div class="about-img reveal"><img src="https://nailsbysatt.nl/wp-content/uploads/2020/12/image7.jpg" alt="Het werk van Satt" loading="lazy"></div>
+    <div class="about reveal">
+      <div class="quote">"Bij geen mogelijkheid wordt er <span>een mogelijkheid</span> gemaakt"</div>
+      <p>Nails by Satt is ontstaan vanuit een passie voor kunst en verzorging. Wat begon met het stylen van eigen nagels groeide uit tot een studio in Almere waar elke klant een uniek kunstwerk meekrijgt.</p>
+      <p>Satt maakt van jouw ideeën een stukje kunstwerk dat je draagt op je hand- en teennagels. Via behandelingen in de studio, press-on nails op maat en sinds kort ook via de Satt Academy, waar de technieken worden doorgegeven aan een nieuwe generatie nail artists.</p>
+      <p>Creativiteit en zorgvuldigheid is de norm. Er wordt tijd genomen voor elke klant, elk design en elke vraag. Jouw stijl staat altijd centraal.</p>
+      <div style="display:flex;gap:14px;margin-top:24px;flex-wrap:wrap">
+        <a class="btn rose sm" href="https://nailsbysatt.salonized.com/widget_bookings/new" target="_blank" rel="noopener">Boek bij Satt</a>
+        <a class="btn ghost sm" href="https://www.instagram.com/nailsbysatt/" target="_blank" rel="noopener">Volg op Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ================= CONTACT ================= -->
+<div class="page" id="page-contact">
+<div class="page-hero">
+  <div class="wrap">
+    <div class="crumb">Home / Contact</div>
+    <h1>Heb je nog vragen? <em>Let me know!</em></h1>
+  </div>
+</div>
+<section>
+  <div class="wrap form-grid">
+    <div class="reveal">
+      <div class="field"><label>Naam</label><input type="text" placeholder="Jouw naam"></div>
+      <div class="field"><label>E-mail</label><input type="email" placeholder="jouw@email.nl"></div>
+      <div class="field"><label>Onderwerp</label>
+        <select><option>Vraag over een behandeling</option><option>Press-on nails bestelling</option><option>Satt Academy</option><option>Cadeaubon</option><option>Anders</option></select>
+      </div>
+      <div class="field"><label>Bericht</label><textarea rows="5" placeholder="Waar kan ik je mee helpen?"></textarea></div>
+      <button class="btn rose" type="button">Verzenden</button>
+    </div>
+    <div class="contact-card reveal">
+      <h3>Direct contact</h3>
+      <div class="row"><b>WhatsApp</b><span>+31 6 488 57 072</span></div>
+      <div class="row"><b>E-mail</b><span>info@nailsbysatt.nl</span></div>
+      <div class="row"><b>Studio</b><span>Alseïdenstraat 20 unit 24, 1363 SR Almere</span></div>
+      <div class="row"><b>Instagram</b><span>@nailsbysatt</span></div>
+      <div class="row"><b>TikTok</b><span>@nailsbysatt</span></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">Nails <em>by Satt</em></div>
+        <p style="color:var(--soft);font-weight:300;max-width:280px">Creatieve en zorgvuldige nagelbehandelingen, handgemaakte press-on nails en de Satt Academy. Studio in Almere.</p>
+      </div>
+      <div>
+        <h4>Diensten</h4>
+        <ul>
+          <li><a data-page="behandelingen">Behandelingen</a></li>
+          <li><a data-page="presson">Press-on nails</a></li>
+          <li><a data-page="academy">Satt Academy</a></li>
+          <li><a data-page="cadeaubonnen">Cadeaubonnen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Info</h4>
+        <ul>
+          <li><a data-page="portfolio">Portfolio</a></li>
+          <li><a data-page="reviews">Reviews</a></li>
+          <li><a data-page="huisregels">No nonsense</a></li>
+          <li><a data-page="over">Over Satt</a></li>
+          <li><a data-page="contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://wa.me/31648857072">+31 6 488 57 072</a></li>
+          <li><a href="mailto:info@nailsbysatt.nl">info@nailsbysatt.nl</a></li>
+          <li><a href="https://www.instagram.com/nailsbysatt/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@nailsbysatt" target="_blank" rel="noopener">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Nails by Satt · Alseïdenstraat 20 unit 24, 1363 SR Almere · KVK 64746860</span>
+      <span>Website door Vision Web Agency</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/31648857072" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a9.9 9.9 0 0 0-8.5 15L2 22l5.2-1.4A9.9 9.9 0 1 0 12 2zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a17 17 0 0 1-1.7-.6c-3-1.3-5-4.4-5.1-4.6-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5.2.6.8 2 .9 2.1.1.2.1.3 0 .5l-.4.6c-.2.2-.3.4-.1.7.1.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.7-.1 1.3z"/></svg>
+</a>
+
+<script>
+// Router
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const page=document.getElementById('page-'+id)||document.getElementById('page-home');
+  page.classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.dataset.page===id));
+  document.getElementById('mobileMenu').classList.remove('open');
+  window.scrollTo({top:0,behavior:'instant'});
+  page.querySelectorAll('.reveal').forEach(el=>observe(el));
+}
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-page]');
+  if(t){e.preventDefault();location.hash=t.dataset.page;}
+});
+window.addEventListener('hashchange',()=>showPage(location.hash.replace('#','')||'home'));
+document.getElementById('burger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('open'));
+
+// Reveal animaties
+const obs=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');obs.unobserve(en.target)}}),{threshold:.1});
+function observe(el){if(!el.classList.contains('in'))obs.observe(el)}
+document.querySelectorAll('.reveal').forEach(observe);
+
+// Init
+showPage(location.hash.replace('#','')||'home');
+</script>
+</body>
+</html>
